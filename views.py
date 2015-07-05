@@ -7,7 +7,8 @@ from flask import json
 from flask import render_template,url_for, request, redirect, jsonify;
 from __init__ import app
 import redis;
-r = redis.StrictRedis(host='91.140.218.141',port=6379,db=0, charset="utf-8", decode_responses=True);
+#Don't forget to change server_ip to your corresponding redis server IP. Same goes for the port.
+r = redis.StrictRedis(host='Server_IP',port=6379,db=0, charset="utf-8", decode_responses=True);
 
 @app.route('/', methods =['GET', 'POST'])
 @app.route('/home', methods =['GET', 'POST'])
@@ -34,16 +35,6 @@ def question(session):
         return render_template('question.html', 
                                ongoing_session = session, 
                                listofstatements = statementslist);
-    #elif request.method == 'POST' and int(number) > 0 and int(number) < 64:
-    #    ongoing_session = request.form['ongoing_session'];
-    #    current_q_number = int(request.form['q_num']) + 1;
-    #    current_question = r.get( str(current_q_number) + ':statement')
-    #    return render_template('question.html', 
-    #                           statement = current_question,
-    #                           ongoing_session = ongoing_session, 
-    #                           q_number = current_q_number);
-    #elif request.method == 'POST' and int(number) > 64:
-    #    return '<h1>done!</h1>'
 
 
 @app.route('/storeresponse', methods =['GET'])
