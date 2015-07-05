@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row">
+<form method="post">
+	<p>Number: 
+	<input type="text" name="q_number" /></p>
+	<p>Statement: 
+	<input type="text" name="new_question" /></p>
+	<button type="submit">Add Question</button>
+</form>
+
+{% endblock %}

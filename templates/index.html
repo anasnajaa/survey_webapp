@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Questionnaire</h1>
+    <p class="lead">The Relationship between Organizational Learning and Organizational Performance.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Briefing </h2>
+        <p>Dear Participant,</p>
+        <p>The objective of this research is to explore your views about the learning level of your organization and how this level relates to its performance.</p>
+        <p>We would like to ask you to be realistic and objective in assessing your organization. We assure complete anonymity of the gathered data, as it will be represented on an aggregate level alone.</p>
+        <p>This research is done in partial fulfillment of the requirements of Leadership and Organizational Behavior course of MBA program in Kuwait University, under the supervision of a specialized professor. We thank you for your cooperation and time.</p>
+        <p>Regards,<br />Research Team</p>
+    </div>
+    <div class="col-md-8">
+        <h2>Guidelines</h2>
+        <p>In the questionnaire, we ask you about the impact of various elements of organizational learning process and innovation on organizational performance. The questionnaire itself has four main parts. In the first one, you asses various elements of organizational learning process in your organization. In the second one, you address the issue of innovativeness. The third part aims to assess performance of your organization, while the fourth part consists of few demographic data. </p>
+        <p>Please provide answers on all questions even though you feel that they repeat themselves occasionally. This is the only way we can assure statistical validity of the questionnaire. In spite this; if you feel that certain statement is truly irrelevant, answer as do not know.</p>
+        <form method="post">
+            <input type="text" hidden="hidden" name="current_session" value="{{ current_session }}" />
+            <button type="submit" class="btn btn-info">I would like to participate</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

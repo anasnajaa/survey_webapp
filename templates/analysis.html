@@ -1,0 +1,27 @@
+﻿{% extends "layout-admin.html" %}
+
+{% block content %}
+        
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Bar charts of each statement</h1>
+                </div>
+            </div>
+            <div class="row">
+                {% for x in range(1,59): %}
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div id="s{{ x }}" class="panel-heading">
+                            {{ x }}. {{ listofstatements[x] }}
+                        </div>
+                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="statement-{{ x }}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+{% endblock %}

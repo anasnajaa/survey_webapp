@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row">
+    <br/>
+    <div class="panel panel-default">
+        <div class="panel-heading">Statements</div>
+        <div class="panel-body">
+            <p>Complete list of the statements used in this survey.</p>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Num</th>
+                    <th>Statement</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in range(1,79): %}
+                <tr>
+                    <td>{{ x }}</td>
+                    <td>{{ listofstatements[x] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
